@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About the Developer | Sameer Shaik</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(120deg, #2C3E50, #4CA1AF);
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #FFD700;
+      margin-bottom: 0.5rem;
+    }
+
+    .profile-img {
+      width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      margin-bottom: 1rem;
+    }
+
+    .badges a {
+      margin: 0.5rem;
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: #fff;
+      color: #111;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease, background 0.3s;
+    }
+
+    .badges a:hover {
+      transform: scale(1.1);
+      background: #ffd700;
+    }
+
+    .skills {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .skills img {
+      height: 48px;
+      filter: drop-shadow(0 0 4px #fff);
+      transition: transform 0.2s;
+    }
+
+    .skills img:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="profile-img" src="https://github.com/Smr2005.png" alt="Sameer Shaik" />
+    <h1>Sameer Shaik</h1>
+    <h3>AI & Data Science | B.Tech @ Aditya College of Engineering</h3>
+
+    <p>🎓 Passionate about using AI for real-world impact. I’ve developed:</p>
+    <ul style="list-style:none; padding-left:0;">
+      <li>🤖 Facial Attendance System</li>
+      <li>🛠️ IoT Gas Leak Detection</li>
+      <li>🩺 Disease Prediction using Streamlit</li>
+    </ul>
+
+    <p>🖋 Outside tech: poet and creative writer.</p>
+
+    <div class="badges">
+      <a href="mailto:shaiksameershubhan@gmail.com">📧 Email</a>
+      <a href="https://www.linkedin.com/in/shaik-sameer-69a3422a8" target="_blank">🔗 LinkedIn</a>
+      <a href="https://github.com/Smr2005" target="_blank">💻 GitHub</a>
+      <a href="https://www.instagram.com/_shaik___sameer_shubhan" target="_blank">📸 Instagram</a>
+      <a href="https://www.instagram.com/s.m.r_writings" target="_blank">📝 Writings</a>
+    </div>
+
+    <div class="skills">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="SQL" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" />
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968508.png" alt="Power BI" />
+    </div>
+
+    <div class="footer">
+      <p>Made with ❤️ by Sameer Shaik | 2025</p>
+      <a href="/" style="color: #ffd700;">🏠 Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Project | AI Attendance</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(to right, #000046, #1CB5E0);
+      margin: 0;
+      color: #fff;
+      animation: fadeIn 0.9s ease-in;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 3rem;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    h1, h2 {
+      color: #0ef;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li::before {
+      content: "✔️ ";
+      margin-right: 0.5rem;
+      color: #0ef;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .svg-bg {
+      position: absolute;
+      top: -70px;
+      right: -70px;
+      width: 200px;
+      opacity: 0.06;
+      animation: rotate 18s linear infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="svg-bg" src="https://www.svgrepo.com/show/376751/brain-ai-technology.svg" alt="Decorative SVG" />
+    <h1>📚 About the Project</h1>
+    <p>This Face Recognition Attendance System is an intelligent web-based solution to streamline and secure attendance tracking using facial biometrics. Built using OpenCV, Flask, and the face_recognition library, this system delivers real-time detection and identification with ease.</p>
+
+    <h2>🧪 Technology Stack</h2>
+    <ul>
+      <li>Python + Flask</li>
+      <li>OpenCV + face_recognition</li>
+      <li>HTML5, CSS3, JavaScript</li>
+      <li>Jinja2 Templates</li>
+      <li>SQLite + Pickle for storage</li>
+    </ul>
+
+    <h2>🚀 Real-world Applications</h2>
+    <ul>
+      <li>Secure classroom attendance</li>
+      <li>Office and employee login verification</li>
+      <li>Smart access control systems</li>
+      <li>Retail customer authentication</li>
+    </ul>
+
+    <h2>🔒 Why Face Recognition?</h2>
+    <p>Face recognition provides a contactless, fast, and accurate alternative to traditional ID-based systems. It improves user experience and reduces identity fraud risks in both educational and industrial environments.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register Face | AI Attendance</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+
+  <!-- Animated CSS and Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #1d2b64, #f8cdda);
+      margin: 0;
+      overflow-x: hidden;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    video {
+      border-radius: 1rem;
+      border: 4px solid #0ef;
+      width: 100%;
+      max-width: 720px;
+    }
+
+    .capture-btn {
+      background: linear-gradient(135deg, #0ef, #00c6ff);
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 1rem;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .capture-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #06f9e1, #00aaff);
+    }
+
+    input[type="text"] {
+      padding: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 50%;
+      margin-bottom: 1rem;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    #capture-count {
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .svg-animation {
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 180px;
+      opacity: 0.1;
+      animation: rotate 12s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="svg-animation" src="https://www.svgrepo.com/show/521725/face-scan.svg" alt="animated" />
+
+    <h1>👤 Register Your Face</h1>
+
+    <video id="camera-preview" autoplay playsinline></video>
+    <br />
+    <button class="capture-btn" onclick="captureImage()">📸 Capture Image</button>
+
+    <form id="registerForm" method="POST">
+      <input type="text" name="name" placeholder="Enter your name" required />
+      <input type="hidden" name="images[]" id="images-data" />
+      <br />
+      <button type="submit" class="capture-btn">✅ Submit</button>
+    </form>
+
+    <div id="capture-count">Captured: 0 / 4</div>
+
+    <div class="footer">
+      <p>Powered by AI | Secure & Private</p>
+    </div>
+  </div>
+
+  <script>
+    let video = document.getElementById('camera-preview');
+    let images = [];
+    let captureCount = 0;
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => video.srcObject = stream)
+      .catch(err => console.error("Camera error: ", err));
+
+    function captureImage() {
+      if (captureCount >= 4) return alert("Already captured 4 images.");
+      let canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      canvas.getContext('2d').drawImage(video, 0, 0);
+      let dataURL = canvas.toDataURL('image/png');
+      images.push(dataURL);
+      captureCount++;
+      document.getElementById('capture-count').textContent = `Captured: ${captureCount} / 4`;
+
+      if (captureCount === 4) {
+        document.getElementById('images-data').value = images.map(img => img).join(',');
+        alert("✅ 4 images captured. You may now submit.");
+      }
+    }
+  </script>
+</body>
+</html>
